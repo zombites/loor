@@ -37,12 +37,31 @@
         <div class="cover-container">
 
           <div class="inner cover">
-            <h1 class="cover-heading">¡Lo estás haciendo muy bien!</h1>
+        	<h1 id="h1-1" class="cover-heading" style="display: none;">¡Lo estás haciendo muy bien!</h1>
+        	<h1 id="h1-2" class="cover-heading" style="display: none;">¡Eres genial!</h1>
+        	<h1 id="h1-3" class="cover-heading" style="display: none;">¡Lo vas a conseguir!</h1>
+			<p id="p1" class="lead" style="display: none;">
+          		<a href="" class="btn btn-md btn-default">Repite</a>
+          		<a href="http://www.facebook.com/sharer.php?u=http://zombit.es/loor" class="btn btn-md btn-default">Facebook</a>
+          		<a href="http://twitter.com/home?status=http://zombit.es/loor" class="btn btn-md btn-default">Twitter</a>
+        	</p>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Experimento estadístico <span class="glyphicon glyphicon-fire"></span> <a href="https://zombit.es">zombit.es</a>.</p>
+              <p><span class="glyphicon glyphicon-fire"></span> <a href="https://zombit.es">zombit.es</a>.</p>
+	            <div class="audiojsZ">
+			      <audio src="snd/sample.mp3" autoplay="false"></audio>
+	      		  <div class="play-pauseZ">
+	        		<p class="loadingZ"></p>
+	        		<p class="errorZ"></p>
+	      		  </div>
+	      		  <div class="scrubberZ">
+	        		<div class="progressZ"></div>
+	        		<div class="loadedZ"></div>
+	      		  </div>
+	      		  <div class="error-messageZ"></div>
+	    		</div>
             </div>
           </div>
 
@@ -51,12 +70,50 @@
       </div>
 
     </div>
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
+    <script src="js/audio.min.js"></script>
+    <script>
+    	audiojs.events.ready(function() {
+        var audios = document.getElementsByTagName('audio');
+    
+        var a1 = audiojs.create(audios[0], {
+          css: false,
+          createPlayer: {
+            markup: false,
+            playPauseClass: 'play-pauseZ',
+            scrubberClass: 'scrubberZ',
+            progressClass: 'progressZ',
+            loaderClass: 'loadedZ',
+            timeClass: 'timeZ',
+            durationClass: 'durationZ',
+            playedClass: 'playedZ',
+            errorMessageClass: 'error-messageZ',
+            playingClass: 'playingZ',
+            loadingClass: 'loadingZ',
+            errorClass: 'errorZ'
+          }
+        });
+        
+		$(document.getElementById('h1-1')).fadeIn(1000);
+		$(document.getElementById('h1-1')).delay(10000).fadeOut(1000);
+		
+		$(document.getElementById('h1-2')).delay(12000).fadeIn(1000);
+		$(document.getElementById('h1-2')).delay(10000).fadeOut(1000);
+		
+		$(document.getElementById('h1-3')).delay(24000).fadeIn(1000);
+		$(document.getElementById('h1-3')).delay(10000).fadeOut(1000);
+		
+		$(document.getElementById('p1')).delay(36000).fadeIn(1000);
+		
+      });
+   
+	</script>
   </body>
 </html>

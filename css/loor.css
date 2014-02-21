@@ -10,13 +10,19 @@ a:hover {
 }
 
 /* Custom default button */
-.btn-default,
+.btn-default {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.3);
+}
+
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #666;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: rgba(255,255,255,.8);
+  border: 1px solid rgba(255,255,255,.9);
 }
 
 
@@ -169,3 +175,27 @@ body {
         background-size: cover;
         box-shadow: inset 0 0 300px rgba(255,255,255,.7);
 }
+
+.slidetext { text-align: center; }
+
+/**********************/
+/*	reproductor	*/
+
+.audiojsZ audio { position: absolute; left: -1px; }
+.audiojsZ { width: 50%; margin: auto; }
+.audiojsZ .scrubberZ { position: relative; width: 100%; background: rgba(255,255,255,.2); height: 2px; border-left: 0px; border-bottom: 0px; overflow: hidden; }
+.audiojsZ .progressZ { position: absolute; top: 0px; left: 0px; height: 2px; width: 0px; background: rgba(255,255,255,.4); z-index: 1; }
+.audiojsZ .error-messageZ { float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff;
+        text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; }
+.audiojsZ .error-messageZ a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; }
+
+.audiojsZ .errorZ { background: url('../audiojs/player-graphics.gif') -2px -61px no-repeat; }
+
+.playingZ .loadingZ, .playingZ .errorZ { display: none; }
+
+.loadingZ .errorZ { display: none; }
+
+.errorZ .timeZ, .errorZ .playZ, .errorZ .pauseZ, .errorZ .scrubberZ, .errorZ .loadingZ { display: none; }
+.errorZ .errorZ { display: block; }
+.errorZ .play-pauseZ p { cursor: auto; }
+.errorZ .error-messageZ { display: block; }
